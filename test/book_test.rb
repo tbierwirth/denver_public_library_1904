@@ -13,4 +13,10 @@ class BookTest < Minitest::Test
     assert_instance_of Book, @book
   end
 
+  def test_the_attributes
+    assert_equal "To Kill a Mockingbird", @book.title
+    assert_equal "Harper Lee", @book.author
+    assert_equal "1960", @book.publication_year
+  end
+
 end
