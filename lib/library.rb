@@ -15,4 +15,18 @@ class Library
     end
   end
 
+  def publication_time_frame_for(author)
+    hash = {}
+    first = author.books.min_by do |book|
+      book.publication_year
+    end
+    last = author.books.max_by do |book|
+      book.publication_year
+    end
+    # binding.pry
+    hash[:start] = first.publication_year
+    hash[:end] = last.publication_year
+    hash
+  end
+
 end
