@@ -32,4 +32,8 @@ class LibraryTest < Minitest::Test
     assert_equal [@jane_eyre, @professor, @villette, @mockingbird], @dpl.books
   end
 
+  def test_publication_time
+    assert_equal ({"start": "1847", "end": "1857"}), @dpl.publication_time_frame_for(@charlotte_bronte)
+  end
+
 end
